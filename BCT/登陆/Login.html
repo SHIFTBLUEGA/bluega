@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>登录页面</title>
+  <link rel="stylesheet" type="text/css" href="Login.css">
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>欢迎登录</h2>
+    <form>
+      <label for="username">用户名:</label>
+      <input type="text" id="username" name="username" required><br>
+
+      <label for="password">密码:</label>
+      <input type="password" id="password" name="password" required><br>
+
+      <input type="button" value="登录" id="Login" onclick="loginuser()">
+	  <script>
+		  function loginuser(){
+			  var user = document.getElementById("username").value;
+			  var pswd = document.getElementById("password").value;
+			  if(user=="admin"&&pswd=="114514")
+			  {
+				 window.alert('登陆成功,点"确定"即跳转')
+			  	 window.location.href="../主页/BCT-L.html";
+				}
+			  else{
+					window.alert("你妈死了不知道账号密码别瞎登");	  
+			  }  
+		  }
+
+
+//屏蔽F12和右键
+	 function click(e) {
+	 if (document.all) {
+	 if (event.button == 2 || event.button == 3) {
+	 alert("看你妈源代码");
+	          oncontextmenu = 'return false';
+	        }
+	      }
+	 if (document.layers) {
+	 if (e.which == 3) {
+	          oncontextmenu = 'return false';
+	        }
+	      }
+	    }
+	 if (document.layers) {
+	      document.captureEvents(Event.MOUSEDOWN);
+	    }
+	    document.onmousedown = click;
+	    document.oncontextmenu = new Function("return false;")
+	
+	    document.onkeydown = document.onkeyup = document.onkeypress = function () {
+	 if (window.event.keyCode == 123) {
+	        window.event.returnValue = false;
+	 return (false);
+	      }
+	    }
+
+		 //如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变则关闭本页面 
+		 var h = window.innerHeight, w = window.innerWidth;
+		    window.onresize = function () {
+		 if (h != window.innerHeight || w != window.innerWidth) {
+		        window.close();
+		        window.location = "你看你妈源代码呢.html";
+		      }
+		    }
+			var threshold = 160; // 打开控制台的宽或高阈值
+			// 每秒检查一次
+			var check = setInterval(function() {
+			    if (window.outerWidth - window.innerWidth > threshold || 
+			        window.outerHeight - window.innerHeight > threshold) {
+			        // 如果打开控制台，则刷新页面
+			        window.location.reload();
+			    }
+			}, 1000)
+			//屏蔽选中
+			document.onselectstart = function (event){
+			    if(window.event){
+			        event = window.event;
+			        }
+			    try{
+			        var the = event.srcElement;
+			        if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+			        return false;
+			        }
+			        return true;
+			        } 
+			    catch (e) {
+			        return false;
+			    }
+			}
+			//屏蔽复制
+			document.oncopy = function (event){
+			    if(window.event){
+			    event = window.event;
+			    }
+			    try{
+			        var the = event.srcElement;
+			        if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+			        return false;
+			        }
+			        return true;
+			        }
+			    catch (e){
+			        return false;
+			    }
+			}
+			
+			//屏蔽剪贴
+			document.oncut = function (event){
+			    if(window.event){
+			    event = window.event;
+			    }
+			    try{
+			        var the = event.srcElement;
+			        if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+			        return false;
+			        }
+			        return true;
+			        }
+			    catch (e){
+			        return false;
+			    }
+			}
+			  	
+			  
+	  </script>
+	  
+	  
+    </form>
+  </div>
+</body>
+
+</html>

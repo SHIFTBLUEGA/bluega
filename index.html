@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>BLUEGA的主页</title>  
+  </head>
+  
+  <style>
+	  body {
+	      text-align: center;
+	      background-image: url("https://news-cdn.medlive.cn/uploadfile/ueditor/php/upload/image/20201017/1602935426653369.jpg");
+	      background-repeat: no-repeat;
+	      background-position: center;
+	      background-size: 130%;
+	  }
+	  .gongneng {
+	      font-size: 0;
+	  }
+	   
+	  input {
+	      width: 70px;
+	      height: 45px;
+	      margin: 2px;
+	      box-shadow: 2px 2px 2px gray;
+	      background-color: #1823b8;
+	      border: none;
+	      border-radius: 25px;
+	      outline: none;
+	      cursor: pointer;
+	  }
+	  input:hover {
+	      background-color: aqua;
+	  }
+  </style>
+        <h1><p align="center"><font color="yellow" face="楷体">BLUEGA的主页</font></p></h1>
+        <hr size="3px" color ="blue">
+		<div class="gongneng">
+		    <input type="button" value="前往登陆" id="前往登陆">
+		    <input type="button" value="前往注册" id="前往注册">
+		    <input type="button" value="选择功能" id="选择功能">
+		    <input type="button" value="获取帮助" id="获取帮助">
+			<input type="button" value="蓝云团队" id="蓝云团队">
+		</div>
+		<script>
+		// 定义前往登陆按钮
+		var login = document.getElementById("前往登陆");
+		login.onclick = function jump() {
+		    window.location.href="登陆.html"
+		}
+		// 定义前往注册按钮
+		var reg document.getElementById("前往注册");
+		reg.onclick function jump() {
+		    window.location.href="注册.html"
+		}
+		// 定义选择功能按钮
+		var fun document.getElementById("选择功能");
+		fun.onclick = function jump() {
+		    window.location.href="选择功能.html"
+		}
+		// 定义获取帮助按钮
+		var help = document.getElementById("获取帮助");
+		help.onclick = function jump() {
+		    window.location.href="帮助.html"
+		}
+		// 定义蓝云团队按钮
+		var bct = document.getElementById("蓝雨团队")
+		bct.onclick() = function jump() {
+			window.location.href="BCT/主页/BCT.html"
+		} 
+		//屏蔽F12和右键
+			 function click(e) {
+			 if (document.all) {
+			 if (event.button == 2 || event.button == 3) {
+			 alert("看你妈源代码");
+			          oncontextmenu = 'return false';
+			        }
+			      }
+			 if (document.layers) {
+			 if (e.which == 3) {
+			          oncontextmenu = 'return false';
+			        }
+			      }
+			    }
+			 if (document.layers) {
+			      document.captureEvents(Event.MOUSEDOWN);
+			    }
+			    document.onmousedown = click;
+			    document.oncontextmenu = new Function("return false;")
+			
+			    document.onkeydown = document.onkeyup = document.onkeypress = function () {
+			 if (window.event.keyCode == 123) {
+			        window.event.returnValue = false;
+			 return (false);
+			      }
+			    }
+				//禁止任何键盘敲击事件（防止F12和shift+ctrl+i调起开发者工具） 
+				    window.onkeydown = window.onkeyup = window.onkeypress = function () {
+				      window.event.returnValue = false;
+				 return false;
+				    }
+				 //如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变则关闭本页面 
+				 var h = window.innerHeight, w = window.innerWidth;
+				    window.onresize = function () {
+				 if (h != window.innerHeight || w != window.innerWidth) {
+				        window.close();
+				        window.location = "../错误/你看你妈源代码呢?.html"
+				      }
+				    }
+					var threshold = 160; // 打开控制台的宽或高阈值
+					// 每秒检查一次
+					var check = setInterval(function() {
+					    if (window.outerWidth - window.innerWidth > threshold || 
+					        window.outerHeight - window.innerHeight > threshold) {
+					        // 如果打开控制台，则刷新页面
+					        window.location.reload();
+					    }
+					}, 1000)
+					//屏蔽选中
+					document.onselectstart = function (event){
+					    if(window.event){
+					        event = window.event;
+					        }
+					    try{
+					        var the = event.srcElement;
+					        if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+					        return false;
+					        }
+					        return true;
+					        } 
+					    catch (e) {
+					        return false;
+					    }
+					}
+					//屏蔽复制
+					document.oncopy = function (event){
+					    if(window.event){
+					    event = window.event;
+					    }
+					    try{
+					        var the = event.srcElement;
+					        if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+					        return false;
+					        }
+					        return true;
+					        }
+					    catch (e){
+					        return false;
+					    }
+					}
+					
+					//屏蔽剪贴
+					document.oncut = function (event){
+					    if(window.event){
+					    event = window.event;
+					    }
+					    try{
+					        var the = event.srcElement;
+					        if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+					        return false;
+					        }
+					        return true;
+					        }
+					    catch (e){
+					        return false;
+					    }
+					}
+		</script>
+		 
+		</br>
+		</br>
+		</br>
+		</br>
+		<center><font size ="6" face="楷体"  color="pink">欢迎来到BLUEGA的主页</font></br>
+		<font size ="8" face="楷体"  color="pink">祝你每天都有好心情哦</font></br></center>
+		
+
+		
+
+</body>
+</html>
+</body>
+</html>
+	 </body>
+</html>
