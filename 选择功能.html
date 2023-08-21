@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择功能</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        }
+        .container {
+            height: 100%;
+            background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+        }
+        .login-wrapper {
+            background-color: #fff;
+            width: 358px;
+            height: 588px;
+            border-radius: 15px;
+            padding: 0 50px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .header {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 200px;
+        }
+        .input-item {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 0;
+            padding: 10px;
+            border-bottom: 1px solid rgb(128, 125, 125);
+            font-size: 15px;
+            outline: none;
+        }
+        .input-item:placeholder {
+            text-transform: uppercase;
+        }
+        .btn {
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            margin-top: 40px;
+            background-image: linear-gradient(to right, #a6c1ee, #fbc2eb);
+            color: #fff;
+        }
+        .msg {
+            text-align: center;
+            line-height: 88px;
+        }
+        a {
+            text-decoration-line: none;
+            color: #abc1ee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-wrapper">
+            <div class="header">选择您需要的功能或游戏</div>
+<button onclick="{ if(confirm('系统:确定游玩俄罗斯方块？'))location.href='俄罗斯方块.html'}">俄罗斯方块</button>
+<button onclick="{ if(confirm('系统:确定游玩贪吃蛇？'))location.href='贪吃蛇.html'}">贪吃蛇</button>
+<button onclick="{ if(confirm('系统:确定使用计算器？'))location.href='计算器.html'}">计算器</button>
+<button onclick="{ if(confirm('系统:确定观看流星雨？'))location.href='代码雨.html'}">代码雨</button>
+<button onclick="{ if(confirm('系统:确定使用计时器？'))location.href='计时器.html'}">计时器</button>
+<button onclick="{ if(confirm('系统:确定游玩打飞机？'))location.href='打飞机.html'}">打飞机</button>
+<button onclick="{ if(confirm('系统:确定听音乐？'))location.href='音乐.html'}">听音乐</button>
+<button onclick="{ if(confirm('系统:确定前往资源中心？'))location.href='资源中心.html'}">资源中心</button>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+            <div class="msg">
+                想回到主页?
+                <a href="index.html">点我返回!</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

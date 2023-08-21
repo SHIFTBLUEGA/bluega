@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计时器</title>
+    <style>
+        body {
+            background-color: #00ff00;
+        }
+
+        .time {
+            width: 198px;
+            height: 198px;
+            background-color: #000;
+            line-height: 200px;
+            font-size: 100px;
+            text-align: center;
+            color: #fff;
+            border: 1px #fff solid;
+            float: left;
+        }
+
+        .box {
+            width: 700px;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        .boxx {
+            width: 50px;
+            height: 200px;
+            float: left;
+            color: #fff;
+            font-size: 100px;
+            text-align: center;
+            line-height: 175px;
+        }
+
+        .butt {
+            margin: 0 auto;
+            height: 50px;
+            width: 655px;
+            margin-top: 50px;
+        }
+
+        .butt button {
+            width: 160px;
+            height: 50px;
+            border: 1px #fff solid;
+            background-color: #000;
+            color: #fff;
+            font-size: 26px;
+        }
+
+        .fg {
+            width: 300px;
+            background-color: #000;
+            border: 1px #fff solid;
+            color: #fff;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 10px 20px;
+            display: none;
+        }
+
+
+
+        .fge {
+            float: left;
+            text-align: center;
+            width: 200px;
+            height: 100%px;
+            font-size: 40px;
+            line-height: 50px;
+        }
+
+        .fgbox {
+            margin: 10px 0px;
+            height: 50px;
+            width: 300px;
+        }
+
+        .fgbulles {
+            width: 100px;
+            float: left;
+            height: 100%;
+            border: 1px #fff solid;
+            background-color: #000;
+            color: #fff;
+            font-size: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="s" class="time"></div>
+        <div class="boxx">:</div>
+        <div id="f" class="time"></div>
+        <div class="boxx">:</div>
+        <div id="m" class="time"></div>
+    </div>
+    <div class="butt">
+        <button onclick="bulle(0)">暂停</button>
+        <button onclick="bulle(1)">开始</button>
+        <button onclick="bulle(2)">分割</button>
+        <button onclick="bulle(3)">重置</button>
+    </div>
+    <div id="fg" class="fg"></div>
+    <script>
+        let timef = 0;
+        let times = 0;
+        let timem = 0;
+        let zt_ks = false;
+        let fg = Array();
+
+        setInterval(() => {
+            if (zt_ks)
+                timem++;
+            if (timem == 60) {
+                timem = 0;
+                timef++;
+                if (timef == 60) {
+                    timef = 0;
+                    times++;
+                }
+            }
+            document.getElementById("s").innerHTML = times;
+            document.getElementById("f").innerHTML = timef;
+            document.getElementById("m").innerHTML = timem;
+
+        }, 1000);
+
+        function dele(i) {
+            console.log(i);
+            //fg.splice(i, 1);
+            fg[i] = "";
+            document.getElementById("fg").innerHTML = "";
+            for (let i = 0; i < fg.length; i++)
+                document.getElementById("fg").innerHTML += fg[i];
+            if (document.getElementById("fg").innerHTML == "") {
+                fg = Array();
+                document.getElementById("fg").style.display = "none";
+            }
+
+        }
+
+        function bulle(i) {
+            switch (i) {
+                case 0:
+                    zt_ks = false;
+                    break;
+                case 1:
+                    zt_ks = true;
+                    break;
+                case 2:
+                    fg.push("<div class='fgbox'>" + "<div class='fge'>" + times + ":" + timef + ":" + timem + "</div>" + "<button class='fgbulles' οnclick='dele(" + fg.length + ")'>X</button>" + "</div>");
+                    document.getElementById("fg").innerHTML += fg[fg.length - 1];
+                    document.getElementById("fg").style.display = "block";
+                    break;
+                case 3:
+                    zt_ks = false;
+                    timef = 0;
+                    times = 0;
+                    timem = 0;
+                    fg = Array();
+                    document.getElementById("fg").innerHTML = "";
+                    document.getElementById("fg").style.display = "none";
+                    break;
+            }
+        }
+    </script>
+	<div class="msg">
+	          玩够了?
+	          <a href="选择功能.html">点我返回</a>
+	      </div>
+</body>
+
+</html>
