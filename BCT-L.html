@@ -60,15 +60,7 @@
 		      window.event.returnValue = false;
 		 return false;
 		    }
-		 //如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变则关闭本页面 
-		 var h = window.innerHeight, w = window.innerWidth;
-		    window.onresize = function () {
-		 if (h != window.innerHeight || w != window.innerWidth) {
-		        window.close();
-		        window.location = "../错误/你看你妈源代码呢?.html"
-		      }
-		    }
-			var threshold = 160; // 打开控制台的宽或高阈值
+			
 			// 每秒检查一次
 			var check = setInterval(function() {
 			    if (window.outerWidth - window.innerWidth > threshold || 

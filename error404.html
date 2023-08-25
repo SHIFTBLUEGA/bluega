@@ -1,62 +1,41 @@
-﻿<!DOCTYPE html>
-<html lang="cn">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蓝云音乐</title>
-    <link rel="stylesheet" href="music.css">
+    <title>错误404</title>
+	    <style>
+	        body {
+	            font-family: Arial, sans-serif;
+	            background-color: #f8f8f8;
+	            margin: 0;
+	            padding: 0;
+	            display: flex;
+	            align-items: center;
+	            justify-content: center;
+	            height: 100vh;
+	            flex-direction: column;
+	        }
+	
+	        h1 {
+	            font-size: 24px;
+	            color: #e74c3c;
+	        }
+	
+	        p {
+	            font-size: 18px;
+	            color: #333;
+	            margin: 10px 0;
+	        }
+	
+	        
+	    </style>
 </head>
-
 <body>
-    <header>
-        <h1>蓝云音乐</h1>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#">首页</a></li>
-            <li><a href="#hot music">热门音乐</a></li>
-            <li><a href="#">歌手</a></li>
-            <li><a href="javascript:alert('须知:本网站所有音乐都会会跳转到163music')">须知</a></li>
-            <li><a href="#">关于我们</a></li>
-			<li><input type="button" value="返回BCT" id="backbct"/></li>
-        </ul>
-    </nav>
-
-    <section id="hot music"class="content">
-        <h2>热门音乐</h2>
-        <ul>
-            <li><a href="https://music.163.com/#/song?id=1497588709">ForYa - 蒋小呢</a></li> 
-            <li><a href="https://music.163.com/#/song?id=247416">立秋 - 筠子</a></li>
-            <li><a href="https://music.163.com/#/song?id=1340439829">只因你太美 (Live) - Null</a></li>
-            <!-- 添加更多歌曲 -->
-        </ul>
-    </section>
-<hr />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-
-    <footer>
-        <p>版权所有 &copy; 2023 音乐中心</p>
-		<p>部分素材来自music.163.com</p>
-    </footer>
+    <h1>哎呀!出错了</h1>
+    <p>对于造成的不便,我们深感抱歉,但是发生了错误.</p>
+    <p>错误代码:404(发生了未知错误!).</p>
+	<a href="BCT.html">返回官网</a>
 </body>
-
 <script>
-	var gobackbct = document.getElementById("backbct")
-	gobackbct.onclick = function jump() {
-		window.location.href="BCT-L.html"
-		
-	}
-	
-	
 	//屏蔽F12和右键
 		 function click(e) {
 		 if (document.all) {
@@ -83,7 +62,12 @@
 		 return (false);
 		      }
 		    }
-	
+			//禁止任何键盘敲击事件（防止F12和shift+ctrl+i调起开发者工具） 
+			    window.onkeydown = window.onkeyup = window.onkeypress = function () {
+			      window.event.returnValue = false;
+			 return false;
+			    }
+			 
 				// 每秒检查一次
 				var check = setInterval(function() {
 				    if (window.outerWidth - window.innerWidth > threshold || 
@@ -141,10 +125,5 @@
 				        return false;
 				    }
 				}
-				  	
-				  
-	
-	
 </script>
-
 </html>
